@@ -1,6 +1,5 @@
 /// <reference types="node" />
 import * as http from "http";
-import { HttpError } from "http-errors";
 import * as m from "mime";
 
 /**
@@ -95,7 +94,7 @@ declare namespace serveStatic {
     }
 
     interface RequestHandler<R extends http.ServerResponse> {
-        (request: http.IncomingMessage, response: R, next: (err?: HttpError) => void): any;
+        (request: http.IncomingMessage, response: R, next: (err?: any) => void): any;
     }
 
     interface RequestHandlerConstructor<R extends http.ServerResponse> {
